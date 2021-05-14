@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+      "price": {
+        "description": "price of the item",
+        "type": "number",
+        "required": true
+      },
+      "name": {
+        "description": "Name of the item",
+        "type": "string",
+        "required": true
+      },
+      "category": {
+        "description": "Category of Item",
+        "type": "string",
+        "required": true,
+        "enum": ["app", "entree", "drink", "dessert"]
+      }
+    },
+    "additionalProperties": false
+  }
