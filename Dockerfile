@@ -3,6 +3,10 @@ FROM node:14-alpine
 # Create app directory
 WORKDIR /usr/src/app
 
+ARG DB_URL
+
+ENV DB_URL=${DB_URL}
+
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
