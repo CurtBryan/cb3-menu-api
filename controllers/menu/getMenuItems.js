@@ -11,6 +11,8 @@ const getMenuItems = async (req, res, next) => {
 
     res.status(200).send(results)
 
+    console.log(results.length + " records")
+
     return results
   } catch (err) {
     console.error(err);

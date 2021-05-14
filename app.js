@@ -23,18 +23,15 @@ app.use(cors());
 let client;
 
 const { MongoClient } = require("mongodb");
-const fs = require("fs");
-let ca = [fs.readFileSync("./rds-combined-ca-bundle.pem")];
+// const fs = require("fs");
+// let ca = [fs.readFileSync("./rds-combined-ca-bundle.pem")];
 
 const mongoSetUp = async () => {
   const { DB_URL } = process.env;
   try {
     client = new MongoClient(DB_URL, {
       useUnifiedTopology: true,
-      poolSize: 5,
-      useNewUrlParser: true,
-      sslValidate: true,
-      sslCA: ca,
+      poolSize: 5
     });
     await client.connect();
     /*

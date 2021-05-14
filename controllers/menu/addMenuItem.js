@@ -16,6 +16,8 @@ const addMenuItem = async (req, res, next) => {
 
     res.status(201).send(results);
 
+    console.log(results)
+
     return results
   } catch (err) {
     res.status(500).send(err.toString());

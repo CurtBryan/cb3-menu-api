@@ -9,7 +9,7 @@ const deleteMenuItem = async (req, res, next) => {
 
     const deleteCursor = await dbInstance.deleteOne({ _id: ObjectId(itemId) });
 
-    console.log(deleteCursor.modifiedCount)
+    console.log(deleteCursor.deletedCount + " items deleted")
 
     res.status(204).send("Item Deleted");
 
