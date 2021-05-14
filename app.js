@@ -28,8 +28,10 @@ const { MongoClient } = require("mongodb");
 
 const mongoSetUp = async () => {
   const { DB_URL } = process.env;
+  const buff = new Buffer(DB_URL, 'base64')
+  const url = buff.toString("utf-8") 
   try {
-    client = new MongoClient(DB_URL, {
+    client = new MongoClient(url, {
       useUnifiedTopology: true,
       poolSize: 5
     });
